@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Recommendations</title>
+</head>
+<body>
+    <h1>Personalized Course Recommendation System</h1>
+    <form id="recommendationForm">
+        <label for="user_id">Enter your User ID:</label>
+        <input type="number" id="user_id" name="user_id" min="1" required>
+        <button type="submit">Show Recommended Courses</button>
+    </form>
+
+    <h2>Your Enrolled Courses:</h2>
+    <ul id="enrolledCourses"></ul>
+
+    <h2>Recommended Courses for You:</h2>
+    <ul id="recommendedCourses"></ul>
+
+    <script>
+        document.getElementById('recommendationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userId = document.getElementById('user_id').value;
+
+            fetch(`/recommend?user_id=${userId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const enrolledCoursesList = document.getElementById('enrolledCourses');
+                    const recommendedCoursesList = document.getElementById('recommendedCourses');
+
+                    // Clear previous results
+                    enrolledCoursesList.innerHTML = '';
+                    recommendedCoursesList.innerHTML = '';
+
+                    // Display enrolled courses
+                    if (data.enrolled_courses.length > 0) {
+                        data.enrolled_courses.forEach(course => {
+                            const li = document.createElement('li');
+                            li.textContent = course;
+                            enrolledCoursesList.appendChild(li);
+                        });
+                    } else {
+                        enrolledCoursesList.innerHTML = '<li>No enrolled courses found.</li>';
+                    }
+
+                    // Display recommended courses
+                    if (data.recommended_courses.length > 0) {
+                        data.recommended_courses.forEach(course => {
+                            const li = document.createElement('li');
+                            li.textContent = course;
+                            recommendedCoursesList.appendChild(li);
+                        });
+                    } else {
+                        recommendedCoursesList.innerHTML = '<li>No recommendations available.</li>';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

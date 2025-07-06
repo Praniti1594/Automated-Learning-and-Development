@@ -1,0 +1,180 @@
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  /* background-color: #aec8ed; */
+  background-color: #ebe8e8;
+  padding: 20px;
+
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background-color: #032d51;
+  color: #ecf0f1;
+  padding: 20px 30px; 
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px;
+  min-height: 60px;
+  position: relative; /* Ensures absolute elements stay within */
+}
+
+/* Dashboard Title - Centered */
+.navbar-title {
+  font-size: 50px;
+  font-weight: 600;
+  position: absolute;
+  left: 15%;
+  transform: translateX(-50%);
+}
+
+/* Container for Right-Aligned Buttons */
+.navbar-buttons {
+  display: flex;
+  gap: 25px; /* Adds space between buttons */
+  align-items: center;
+  right: 100px; /* Shift buttons more to the left */
+}
+/* Common Button Styles */
+.navbar-buttons div {
+  background-color: rgba(255, 255, 255, 0.15); /* Reduced transparency */
+  color: white;
+  font-size: 16px;
+  padding: 8px 12px;
+  /* border: 1px solid white; */
+  border: #ebe8e8;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+/* Button Hover Effect */
+.navbar-buttons div:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light transparent effect */
+  color: #ffffff;
+}
+
+/* Logout Button */
+.navbar button {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  font-size: 16px; /* Increase font size */
+  padding: 10px 18px; /* Increase padding */
+  border-radius: 8px; /* Slightly larger border radius */
+  cursor: pointer;
+  transition: background 0.3s ease;
+  position: absolute;
+  top: 18px; /* Adjust positioning */
+  right: 80px; /* Keep Logout aligned properly */
+  height: 40px; /* Make button taller */
+  width: auto; /* Keep it responsive */
+}
+
+/* Hover Effect */
+.navbar button:hover {
+  background-color: #c0392b;
+}
+
+
+
+/* Widgets Container */
+.widgets-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Keep three columns */
+  gap: 50px; /* Increased gap for more spacing */
+  width: 40%;
+  margin-top: 15px;
+}
+
+/* Widget Box */
+.widget-box {
+  background: rgba(255, 255, 255, 0.05); /* More transparent */
+  border-radius: 10px;
+  border: 1px solid #032d51; /* Ensure border is visible */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  width: 190px;
+  overflow: hidden;
+}
+
+/* Widget Content */
+.widget-content {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+/* Reduce text spacing */
+.widget-content p {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+/* Widget Hover Effect */
+.widget-box:hover {
+  transform: scale(1.05); /* Slightly bigger hover effect */
+  background: rgba(187, 190, 139, 0.3); /* More transparent on hover */
+}
+
+/* Widget Button */
+.widget-button {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .widgets-container {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    gap: 15px; /* Adjusted for responsiveness */
+  }
+}
+
+@media (max-width: 768px) {
+  .widgets-container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.dashboard-container::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  right: 170px; /* Adjust spacing from right */
+  transform: translateY(-50%) scaleX(-1); /* Flip the image horizontally */
+  width: 500px; /* Set width */
+  height: 500px; /* Set height */
+  background-image: url('C:/Users/praniti/Downloads/half upskill vision/Working/src/images/anm5.gif'); /* Replace with your correct path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 20%;
+} 
+
+
+

@@ -1,0 +1,79 @@
+
+/* Container */
+.instructor-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #14161f;
+  color: white;
+  padding: 8px 15px; /* Reduced height */
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  font-size: 30px; /* Slightly reduced */
+  font-weight: bold;
+  color: white;
+  margin-left: 10px;
+}
+
+
+
+/* Logout Button (Aligned to Right) */
+.logout-button {
+  margin-left: auto;
+}
+
+/* Content Wrapper (Flexbox to arrange sidebar and image) */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+}
+
+/* Sidebar Navigation (Left Side) */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 250px;
+}
+
+.sidebar button, .sidebar a button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.sidebar button:hover, .sidebar a button:hover {
+  background-color: #0056b3;
+}
+
+/* Image Container (Right Side) */
+.image-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructor-image {
+  max-width: 550px; /* Increased size */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}

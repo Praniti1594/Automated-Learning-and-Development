@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Quiz with Cheat Detection</title>
+    <link href="style.css" rel="stylesheet" />
+    <!-- Chart.js for performance graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Face-api.js for face detection -->
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+    <!-- Importmap for Google Generative AI -->
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <style>
+      /* Ensure video element is visible on screen */
+      #ques{
+        color:#000
+      }
+      #videoElement {
+        border: 2px solid #000;
+        width: 300px;
+        height: 250px;
+        margin: 10px;
+      }
+      #cheatAlert {
+        color: red;
+        font-weight: bold;
+        margin: 10px;
+      }
+
+      /* Add flexbox layout for quiz content and pie chart */
+      #quizContentWithChart {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 900px; /* Adjust for better fit */
+        margin: 20px auto;
+      }
+
+      #quizContent {
+        width: 60%; /* Adjust to take up 60% of the width */
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        color:#000;
+        border: 2px solid #f34915;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      #chartContainer {
+        width: 35%; /* Adjust to take up 35% of the width */
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Make sure the chart is responsive */
+      #chart {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Adjust font size for the performance evaluation text */
+      #analysis {
+        font-size: px; /* Increase font size */
+        margin-top: 0px;
+        margin-right: 20px;
+        line-height: 1.6;
+        color: #ffffff;
+      }
+
+      /* Adjust the rating section */
+      .rating {
+        font-size: 32px; /* Increase font size for rating */
+        margin-top: 20px;
+        background-color: #ffeb3b;
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgb(78, 76, 76);
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h2>Welcome to AI Quiz</h2>
+    </center>
+
+    <div id="topicSelection">
+      <label for="topicInput">Enter a topic for the quiz:</label>
+      <input type="text" id="topicInput" placeholder="e.g., JavaScript, Python, etc." />
+      <button id="startQuiz">Start Quiz</button>
+    </div>
+
+    <!-- Container for both quiz and chart -->
+    <div id="quizContentWithChart">
+      <div id="quizContent" hidden>
+        <h3 id="ques">Questions will appear here.</h3>
+        <br />
+        <textarea id="ans" rows="6" cols="50"></textarea>
+        <br />
+        <div class="buttons">
+          <button id="prev">Prev</button>
+          <button id="submit" type="submit">Submit</button>
+          <button id="next">Next</button>
+        </div>
+        <h2>Response:</h2>
+        <p id="responseText">The response will appear here.</p>
+      </div>
+
+      <!-- Add pie chart next to quiz content -->
+      <div id="chartContainer">
+        <canvas id="chart" width="300" height="300"></canvas>
+        <div id="rating" class="rating"></div>
+      </div>
+    </div>
+
+    <!-- Container for AI-generated analysis -->
+    <div id="analysis"></div>
+
+    <!-- Elements for cheat detection -->
+    <div id="cheatDetection">
+      <video id="videoElement" autoplay muted playsinline></video>
+      <div id="cheatAlert"></div>
+    </div>
+
+    <script type="module" src="scriptquiz.js"></script>
+  </body>
+</html>

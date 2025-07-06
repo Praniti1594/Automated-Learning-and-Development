@@ -1,0 +1,225 @@
+.signup-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  background-color: ghostwhite !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-right: 50px;
+  position: relative;
+}
+
+.signup-image {
+  position: absolute;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  background: url('C:\Users\praniti\Downloads\half upskill vision\Working\src\images\animated2.png') no-repeat center center;
+  background-size: cover;
+}
+
+.signup-box {
+  width: 550px;
+  height: auto;
+  background: rgba(63, 115, 130, 0.3) !important;
+  padding: 20px;
+  border-radius: 45px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 102, 255, 0.5);
+  position: relative;
+}
+
+.signup-header {
+  display: flex;
+  align-items: center; /* Vertically align logo and text */
+  gap: 5px; /* Reduce space between logo and text */
+  margin-bottom: 5px; /* Reduce space below the header */
+}
+
+
+.signup-header h2 {
+  margin: 0;
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+  flex-grow: 1; /* Allow text to expand */
+  text-align: center; /* Center text horizontally */
+}
+.signup-body label {
+  display: block;
+  margin: 10px 0 10px;
+  font-size: 16px;
+  color: #000000;
+}
+
+.signup-body input,
+.signup-body select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.signup-submit-button {
+  width: 50%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: rgb(84, 104, 110) !important;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.signup-submit-button:hover {
+  opacity: 0.6;
+  text-decoration: underline;
+  background-color: #ffffff;
+}
+
+.sign-up {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sign-up span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #3f3c3c;
+}
+
+.sign-up-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sign-up-link:hover {
+  text-decoration: underline;
+  opacity: 0.6;
+  color: #000000;
+}
+
+.signup-error-message {
+  color: #ff0000;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-password-criteria ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.signup-password-criteria li {
+  font-size: 12px;
+  color: #666;
+}
+
+.signup-password-criteria li.valid {
+  color: green;
+}
+
+.signup-password-criteria li.invalid {
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .signup-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .signup-image {
+    display: none;
+  }
+
+  .signup-box {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+.name-fields {
+  display: flex;
+  gap: 20px; /* Space between first and last name */
+  justify-content: space-between;
+}
+
+.name-input {
+  flex: 1; /* Make both inputs take equal space */
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .name-fields {
+    flex-direction: column;
+    gap: 10px;
+  }
+}  
+.password-fields {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Adjust spacing between fields */
+}
+
+.password-input {
+  width: 48%; /* Ensures both fields fit side by side */
+  display: flex;
+  flex-direction: column;.password-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .password-input {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .password-input input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+}
+
+@media (max-width: 600px) {
+  .password-fields {
+    flex-direction: column;
+  }
+
+  .password-input {
+    width: 100%; /* Stack fields in small screens */
+  }
+}
+
+
+.image-container1{
+  flex: 1;
+  height: 100%;
+  background-image: url('C:/Users/praniti/Downloads/half upskill vision/Working/src/images/animated2.png'); /* Add your image */
+  background-size: 90%; /* Reduce image size */
+  background-position: left center; /* Move image more to the left */
+  background-repeat: no-repeat;
+}
