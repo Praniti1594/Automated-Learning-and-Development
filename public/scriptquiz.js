@@ -15,7 +15,7 @@ const quizContent = document.getElementById('quizContent');
 const videoElement = document.getElementById('videoElement');
 const cheatAlert = document.getElementById('cheatAlert');
 
-const apiKey = 'AIzaSyB1QiMcUVr8Yd2yy0M9bkAFwmfe9KXho9c';
+const apiKey = '';
 
 const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
