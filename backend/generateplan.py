@@ -20,7 +20,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Google Generative AI Configuration
-api_key = "AIzaSyB1QiMcUVr8Yd2yy0M9bkAFwmfe9KXho9c" # Store API key in an environment variable
+api_key = "" # Store API key in an environment variable
 if not api_key:
     raise ValueError("Google API key not found. Set GOOGLE_API_KEY in your environment.")
 genai.configure(api_key=api_key)
