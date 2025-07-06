@@ -11,7 +11,7 @@ async function generatePlan() {
         return;
     }
 
-    const apiKey = "AIzaSyB1QiMcUVr8Yd2yy0M9bkAFwmfe9KXho9c"; // 🔥 Replace this with your actual Gemini API key
+    const apiKey = ""; // 🔥 Replace this with your actual Gemini API key
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
     const prompt = `Generate a structured study plan for a course on "${courseName}" to be completed in ${goalDuration} days.
